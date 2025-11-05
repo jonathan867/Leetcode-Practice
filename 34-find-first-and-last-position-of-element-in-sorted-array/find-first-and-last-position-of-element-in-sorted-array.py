@@ -30,9 +30,12 @@ class Solution:
                     l = m+1
             return ind
         
-        ind1 = bsGE(target, nums)
-        ind2 = bsLE(target, nums)
-        if ind1 == -1 or ind2 == -1 or not(nums[ind1] == nums[ind2] == target):
+        # ind1 = bsGE(target, nums)
+        # ind2 = bsLE(target, nums)
+        ind1 = bisect.bisect_left(nums, target)
+        ind2 = bisect.bisect_right(nums, target)-1 # returns the point AFTER any entries, so we do -1
+        print(ind1, ind2)
+        if not (0<=ind1<len(nums) and 0<=ind2<len(nums)) or not(nums[ind1] == nums[ind2] == target):
             return [-1, -1]
         return [ind1, ind2]
 
