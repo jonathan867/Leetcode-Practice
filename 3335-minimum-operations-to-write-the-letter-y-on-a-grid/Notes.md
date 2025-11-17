@@ -1,0 +1,1 @@
+<h2>minimum-operations-to-write-the-letter-y-on-a-grid Notes</h2><hr>[ Time taken: 19 m 26 s ]
